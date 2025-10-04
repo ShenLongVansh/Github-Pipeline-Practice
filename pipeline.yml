@@ -1,0 +1,16 @@
+name: CI pipeline
+on: [push]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - name: Install Node
+        uses: actions/setup-node@v5
+        with:
+          node-version: 18
+      - name: Install Node Dependencies
+        run: npm Install
+      - name: Runs Development Server
+        run: npm run dev
