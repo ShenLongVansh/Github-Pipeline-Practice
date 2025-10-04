@@ -13,6 +13,6 @@ jobs:
         with:
           node-version: 18
       - name: Install Node Dependencies
-        run: npm Install
+        run: npm install
       - name: Runs Development Server
         run: npm run dev
