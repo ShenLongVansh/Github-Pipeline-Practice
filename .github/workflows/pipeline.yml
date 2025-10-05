@@ -1,18 +1,22 @@
-name: CI pipeline
+name: CI-CD Pipeline revision
 on: [push]
-
 jobs:
-  build:
+  ci:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v5
+      - name: checkout-code
+        uses: actions/checkout@v5
         with: 
-          repository: 'ShenLongVansh/portfolio'
-      - name: Install Node
-        uses: actions/setup-node@v5
+        repository: 'ShenLongVansh/portfolio'
+      - name: Node availability
+        uses: actions/setup-node@v1.4.1
         with:
-          node-version: 18
-      - name: Install Node Dependencies
-        run: npm install
-      - name: Runs Development Server
-        run: npm run dev
+          node-version: "18"
+      - name: Install Node Modules
+        run: npm install 
+      - name: Build and test modules
+        run: |
+          npm run build
+          npm test
+      - name: Simulate Deployment
+        run: echo "Deployment simulated"
