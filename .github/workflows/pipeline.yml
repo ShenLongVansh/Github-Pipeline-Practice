@@ -9,7 +9,7 @@ jobs:
         with: 
           repository: 'ShenLongVansh/portfolio'
       - name: Node availability
-        uses: actions/setup-node@v1.4.1
+        uses: actions/setup-node@v5
         with:
           node-version: "18"
       - name: Install Node Modules
