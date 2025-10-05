@@ -7,7 +7,7 @@ jobs:
       - name: checkout-code
         uses: actions/checkout@v5
         with: 
-        repository: 'ShenLongVansh/portfolio'
+          repository: 'ShenLongVansh/portfolio'
       - name: Node availability
         uses: actions/setup-node@v1.4.1
         with:
